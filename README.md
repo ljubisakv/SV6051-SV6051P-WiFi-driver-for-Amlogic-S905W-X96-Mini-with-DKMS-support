@@ -133,7 +133,6 @@ This work would not have been possible without the contributions of:
 
 ## 📄 License
 
-This project is open-source and available under the MIT License.
 
 ---
 
@@ -145,3 +144,35 @@ This project is open-source and available under the MIT License.
 - Kernel 6.18.37-ophub
 - DKMS support for automatic kernel updates
 - Includes `-DSDIO_USE_SLOW_CLOCK` SDIO timing fix
+
+## Linux 6.12 compatibility testing
+
+A source-only copy of the driver is available in the `driver/` directory.
+
+The driver was successfully built and tested on the following system:
+
+- Device: X95 Android TV box
+- Wi-Fi chipset: SSV6051P (SDIO ID 3030:3030)
+- OS: Armbian 26.11.0 (Bookworm)
+- Kernel: 6.12.112-ophub
+- Architecture: aarch64
+
+The Linux 6.12 compatibility changes are documented in the source and in
+[X95-TEST-REPORT.md](X95-TEST-REPORT.md).
+
+The test confirmed Wi-Fi detection, firmware loading, scanning, connection,
+DHCP, network connectivity and operation after reboot.
+
+**Limitations:** DKMS build and automatic rebuild after kernel upgrades have
+not been verified on this test system. The reported throughput is a test
+observation, not a maximum-speed claim.
+
+## License clarification
+
+Some earlier project documentation describes the project as MIT licensed.
+However, the driver source files contain notices identifying them as
+GNU General Public License version 3 or later (GPL-3.0-or-later).
+
+Please follow the license notices accompanying the individual source files.
+The licensing and redistribution terms of bundled third-party patches and
+firmware should be reviewed separately before redistribution.
